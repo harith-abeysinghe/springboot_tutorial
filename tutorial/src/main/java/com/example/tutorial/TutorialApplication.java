@@ -15,8 +15,15 @@ public class TutorialApplication {
 
 		// Lion l = new Lion();
 		// l.show();
+		// Lion l = context.getBean(Lion.class);
+		// l.show();
+		// Spring creates the object of Lion class even when not defined. Singleton pattern is used by default. 
+		// When prototype is used, an object is created only when used.
+
 		Lion l = context.getBean(Lion.class);
 		l.show();
+		Lion l1 = context.getBean(Lion.class);
+		l1.show();
 	}
 
 }

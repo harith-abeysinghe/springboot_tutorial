@@ -1,12 +1,21 @@
 package com.example.tutorial;
 
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Component;
 
 @Component
+@Scope(value = "prototype")
 public class Lion {
     private int id;
     private String name;
     private String tech;
+
+
+    public Lion() {
+        super();
+        System.out.println("In Lion Constructor");
+    }
+
 
     /**
      * @return int return the id
