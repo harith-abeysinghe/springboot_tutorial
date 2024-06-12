@@ -22,8 +22,6 @@ public class TutorialApplication {
 
 		Lion l = context.getBean(Lion.class);
 		l.show();
-		Lion l1 = context.getBean(Lion.class);
-		l1.show();
 	}
 
 }
