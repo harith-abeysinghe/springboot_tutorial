@@ -8,6 +8,6 @@ pageEncoding="UTF-8"%>
 	</head>
 	<body>
 		<h1>Home</h1>
-		<p>Welcome to the WebApp Demo ${name}!</p>
+		<p>Welcome to the WebApp Demo ${obj.id}, ${obj.name}, ${obj.lang}</p>
 	</body>
 </html>

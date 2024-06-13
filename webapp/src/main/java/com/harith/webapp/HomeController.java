@@ -35,10 +35,18 @@ public class HomeController {
     //data - name
     //view - home
 
-    //using ModelAndView
-    public ModelAndView home(@RequestParam("name") String myName) { //instead of HttpServletRequest request and session
+    //using ModelAndView to accpet a string and pass it to the view
+    // public ModelAndView home(@RequestParam("name") String myName) { //instead of HttpServletRequest request and session
+    //     ModelAndView mv = new ModelAndView();
+    //     mv.addObject("name", myName);
+    //     mv.setViewName("home");
+    //     return mv;
+    // }
+
+    //using ModelAndView to accpet an object of Lion class and pass it to the view
+    public ModelAndView home(Lion lion) { //instead of HttpServletRequest request and session
         ModelAndView mv = new ModelAndView();
-        mv.addObject("name", myName);
+        mv.addObject("obj", lion);
         mv.setViewName("home");
         return mv;
     }
