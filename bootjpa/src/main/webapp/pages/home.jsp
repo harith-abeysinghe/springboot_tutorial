@@ -8,9 +8,15 @@ pageEncoding="UTF-8"%>
 	</head>
 	<body>
 		<form action="addLion">
-			<input type="text" name="name" placeholder="Name" />
 			<input type="text" name="id" placeholder="ID" />
+			<input type="text" name="name" placeholder="Name" />
+			<input type="text" name="tech" placeholder="Tech" />
 			<input type="submit" value="Add Lion" />
+		</form>
+
+		<form action="getLion">
+			<input type="text" name="id" placeholder="ID" />
+			<input type="submit" value="Get Lion" />
 		</form>
 	</body>
 </html>
