@@ -1,0 +1,1 @@
+INSERT INTO LION (ID, NAME) VALUES (1, 'Simba');
