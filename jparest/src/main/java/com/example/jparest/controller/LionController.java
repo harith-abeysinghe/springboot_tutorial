@@ -1,10 +1,15 @@
 package com.example.jparest.controller;
 
+import java.util.List;
+import java.util.Optional;
+
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.servlet.ModelAndView;
 
 import com.example.jparest.dao.LionRepo;
@@ -30,19 +35,16 @@ public class LionController {
         return "home";
     }
 
-    @RequestMapping("/getLion")
-    public ModelAndView getLion(@RequestParam int id) {
-        ModelAndView mv = new ModelAndView("showLion");
-        Lion lion = repo.findById(id).orElse(new Lion());
+    @RequestMapping("/lions")
+    @ResponseBody
+    public List<Lion> getLion() {
+        return repo.findAll();
+    }
 
-        System.out.println(repo.findByTech("Java"));
-
-        System.out.println(repo.findByIdGreaterThan(1));
-
-        System.out.println(repo.findByTechSorted("Java"));
-
-        mv.addObject(lion);
-        return mv;
+    @RequestMapping("/lions/{id}")
+    @ResponseBody
+    public Optional<Lion> getLionbyId(@PathVariable("id") int id) {
+        return repo.findById(id);
     }
     
 }
