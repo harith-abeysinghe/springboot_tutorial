@@ -34,6 +34,13 @@ public class LionController {
     public ModelAndView getLion(@RequestParam int id) {
         ModelAndView mv = new ModelAndView("showLion");
         Lion lion = repo.findById(id).orElse(new Lion());
+
+        System.out.println(repo.findByTech("Java"));
+
+        System.out.println(repo.findByIdGreaterThan(1));
+
+        System.out.println(repo.findByTechSorted("Java"));
+
         mv.addObject(lion);
         return mv;
     }
